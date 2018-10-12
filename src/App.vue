@@ -133,7 +133,7 @@
   .sidebar-wrapper{
     box-sizing: border-box;
     width: 200px!important;
-    border: none;
+    border: none!important;
     background-color: #853998;
   }
   @media screen and (max-width: 1024px) {

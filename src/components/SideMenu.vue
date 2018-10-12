@@ -2,7 +2,7 @@
   <div>
     <el-menu
       default-active="1-1"
-      class="sidebar-wrapper"
+      class="sidebar-content"
       @open="handleOpen"
       @close="handleClose"
       background-color="#853998"
@@ -84,15 +84,15 @@
 </script>
 
 <style scoped>
-  .sidebar-wrapper{
+  .sidebar-content{
     background-color: #853998
   }
-  .sidebar-wrapper:not(.el-menu--collapse){
+  .sidebar-content:not(.el-menu--collapse){
     width: 200px;
     box-sizing: border-box;
   }
 
-  .sidebar-wrapper i {
+  .sidebar-content i {
     color: #fff
   }
 
