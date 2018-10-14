@@ -2,7 +2,7 @@
   <div id="app">
     <el-container class="content-wrapper">
       <el-header class="header-wrapper">
-        <div class="logo-wrapper" onclick="document.location.href='/'">
+        <div class="logo-wrapper" onclick="document.location.href='#'">
           <!--<i class="glyphicon glyphicon-inbox"></i>-->
           <span class="logo-title">FEED-HMP平台</span>
         </div>
