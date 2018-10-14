@@ -1,6 +1,6 @@
 <template>
   <div class="content-wrapper">
-    <el-carousel height="40px" arrow="never" :interval="5000">
+    <el-carousel height="40px" arrow="never" :interval="5000" indicator-position="none">
       <el-carousel-item>
         <div class="rotate-banner">
           <a class="xp-follow-account" href="javascript:void(0)" @click="doFollowHiPu('_Qk0wO5b2e0--t9RqDUBHA')"><img
@@ -172,7 +172,8 @@
             </div>
           </el-collapse-item>
         </el-collapse>
-        <p class="warning-message"><b>注意: </b><b style="color:red">请务必保证注册信息的真实性，以免影响任务正常运行。注册后在统一时间点审批，紧急任务可联系平台管理员审批！</b></p>
+        <p class="warning-message"><b>注意: </b><b
+          style="color:red">请务必保证注册信息的真实性，以免影响任务正常运行。注册后在统一时间点审批，紧急任务可联系平台管理员审批！</b></p>
         <el-row type="flex" justify="center" class="submit-buttons">
           <el-button type="primary" @click="submitForm('ruleForm')">创建</el-button>
           <el-button type="danger" @click="resetForm('ruleForm')">重置</el-button>
@@ -301,6 +302,7 @@
     text-align: center;
     line-height: 40px;
     background-color: #fcff58;
+    height: 100%;
     opacity: 0.6;
   }
 
@@ -327,10 +329,19 @@
     text-align: center;
     margin-bottom: 20px;
   }
-  .warning-message{
+
+  .warning-message {
     margin-top: 20px;
   }
+
   .submit-buttons {
     margin-top: 20px;
+  }
+  @media screen and (max-width: 1024px) {
+    .rotate-banner {
+      height: 100%;
+      line-height: unset;
+      font-size: 12px;
+    }
   }
 </style>

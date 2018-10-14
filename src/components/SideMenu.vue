@@ -50,7 +50,7 @@
     data () {
       return {
         screenWidth: document.body.clientWidth,
-        isCollapse: document.body.clientWidth > 1024
+        isCollapse: !(document.body.clientWidth > 1024)
       }
     },
     mounted () {
