@@ -1,6 +1,7 @@
 # hmp-demo
 
-> hmp platform demo
+> Feed HMP platform demo
+> https://nanoharcher.github.io/HMP-Demo/
 
 ## Build Setup
 
