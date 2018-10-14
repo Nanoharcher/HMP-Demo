@@ -25,7 +25,7 @@
     width: 100%;
   }
   .navigation-content{
-    border: none;
+    border: none!important;
   }
 
   .el-menu {
@@ -42,7 +42,9 @@
   .navigation-title {
     font-size: 16px;
   }
+  .el-menu.el-menu--horizontal{
 
+  }
   @media screen and (max-width: 1440px) {
     .el-menu {
       padding: 0 60px;

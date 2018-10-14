@@ -95,8 +95,7 @@
   .sidebar-content i {
     color: #fff
   }
-
-  .el-menu-item {
-    min-width: auto;
+  .el-menu{
+    border: none!important
   }
 </style>

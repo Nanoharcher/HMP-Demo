@@ -64,6 +64,7 @@
 <style>
   html, body{
     height: 100%;
+    font-weight: 700;
   }
   #app{
     height: 100%;
@@ -79,7 +80,7 @@
     padding: 0!important;
   }
   .el-main{
-    padding: 0;
+    padding: 0!important;
   }
   .header-wrapper{
     display: flex;
@@ -133,7 +134,7 @@
   .sidebar-wrapper{
     box-sizing: border-box;
     width: 200px!important;
-    border: none!important;
+    border:none!important;
     background-color: #853998;
   }
   @media screen and (max-width: 1024px) {

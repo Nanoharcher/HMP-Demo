@@ -5,7 +5,6 @@ import JobCreate from '@/components/JobCreate'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   routes: [
     {path: '/', name: 'JobCreate', component: JobCreate, meta: {title: 'HMP平台'}}]
 })
