@@ -23,6 +23,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     // allow async-await
+    'space-before-function-paren': 'off',
     'indent': 'off',
     'generator-star-spacing': 'off',
     // allow debugger during development

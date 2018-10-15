@@ -1,9 +1,7 @@
 <template>
   <div class="content-wrapper">
-    <rotating-banner></rotating-banner>
-    <div class="divider"></div>
     <div class="form-wrapper">
-      <el-form :model="jobCreateForm" :rules="rules" ref="ruleForm" label-width="110px" class="search-wrapper">
+      <el-form :model="jobCreateForm" :rules="rules" ref="ruleForm" label-width="110px">
         <el-collapse v-model="activeNames">
           <el-collapse-item name="1">
             <template slot="title">
@@ -13,35 +11,39 @@
               <el-row :gutter="20" class="search-rows">
                 <!--任务名-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-tooltip placement="top">
-                    <div slot="content">每个任务一条纪录, <span style="color:red;"><b>请去掉任务名结尾的"_日期"</b></span>, 如任务名:
-                      feed_production_[time]_xxx_20171111, 注册名: feed_production_[time]_xxx，time的取值为hour或day或other
-                    </div>
-                    <el-form-item label="任务名" prop="jobname">
-                      <el-input v-model="jobCreateForm.jobname" placeholder="请选择任务名"></el-input>
-                    </el-form-item>
-                  </el-tooltip>
+                  <el-form-item label="任务名" prop="jobname">
+                    <el-input v-model="jobCreateForm.jobname" placeholder="请选择任务名">
+                    </el-input>
+                    <el-tooltip class="item" placement="top">
+                      <div slot="content">每个任务一条纪录, <span style="color:red;"><b>请去掉任务名结尾的"_日期"</b></span>, 如任务名:
+                        feed_production_[time]_xxx_20171111, 注册名: feed_production_[time]_xxx，time的取值为hour或day或other
+                      </div>
+                      <el-button type="text" icon="el-icon-question"></el-button>
+                    </el-tooltip>
+                  </el-form-item>
                 </el-col>
                 <!--业务线-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-tooltip placement="top">
-                    <div slot="content">若不存在，请联系管理员</div>
-                    <el-form-item label="业务线" prop="busConfigId">
-                      <el-select v-model="jobCreateForm.busConfigId" placeholder="请选择业务线">
-                        <el-option label="测试数据" value="test1"></el-option>
-                        <el-option label="测试数据" value="test2"></el-option>
-                      </el-select>
-                    </el-form-item>
-                  </el-tooltip>
+                  <el-form-item label="业务线" prop="busConfigId">
+                    <el-select v-model="jobCreateForm.busConfigId" placeholder="请选择业务线">
+                      <el-option label="测试数据" value="test1"></el-option>
+                      <el-option label="测试数据" value="test2"></el-option>
+                    </el-select>
+                    <el-tooltip class="item" placement="top">
+                      <div slot="content">若不存在，请联系管理员</div>
+                      <el-button type="text" icon="el-icon-question"></el-button>
+                    </el-tooltip>
+                  </el-form-item>
                 </el-col>
                 <!--告警邮件-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-tooltip placement="top">
-                    <div slot="content">可只写前缀, 多个逗号分隔</div>
-                    <el-form-item label="告警邮件" prop="mails">
-                      <el-input v-model="jobCreateForm.mails" placeholder="请输入告警邮件"></el-input>
-                    </el-form-item>
-                  </el-tooltip>
+                  <el-form-item label="告警邮件" prop="mails">
+                    <el-input v-model="jobCreateForm.mails" placeholder="请输入告警邮件"></el-input>
+                    <el-tooltip class="item" placement="top">
+                      <div slot="content">可只写前缀, 多个逗号分隔</div>
+                      <el-button type="text" icon="el-icon-question"></el-button>
+                    </el-tooltip>
+                  </el-form-item>
                 </el-col>
                 <!--作业组名称-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
@@ -51,12 +53,13 @@
                 </el-col>
                 <!--作业描述-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-tooltip placement="top">
-                    <div slot="content">输入、输出和功能描述, &lt;100字</div>
-                    <el-form-item label="作业描述" prop="jobDesc">
-                      <el-input type="textarea" v-model="jobCreateForm.jobDesc"></el-input>
-                    </el-form-item>
-                  </el-tooltip>
+                  <el-form-item label="作业描述" prop="jobDesc">
+                    <el-input type="textarea" v-model="jobCreateForm.jobDesc"></el-input>
+                    <el-tooltip class="item" placement="top">
+                      <div slot="content">输入、输出和功能描述, &lt;100字</div>
+                      <el-button type="text" icon="el-icon-question"></el-button>
+                    </el-tooltip>
+                  </el-form-item>
                 </el-col>
               </el-row>
             </div>
@@ -87,21 +90,22 @@
                 </el-col>
                 <!--跨队列调度-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-tooltip placement="top">
-                    <div slot="content">
-                      自动选择空闲队列，以减少任务积压。提交任务必须使用
-                      <b><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=467671033" target="_blank">HMPClient</a></b>
-                      ，小流量阶段适用范围<b><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=490079170"
-                                      target="_blank">
-                      说明</a></b>
-                    </div>
-                    <el-form-item label="跨队列调度" prop="dispatch">
-                      <el-select v-model="jobCreateForm.dispatch">
-                        <el-option label="开启" value="test1"></el-option>
-                        <el-option label="关闭" value="test2"></el-option>
-                      </el-select>
-                    </el-form-item>
-                  </el-tooltip>
+                  <el-form-item label="跨队列调度" prop="dispatch">
+                    <el-select v-model="jobCreateForm.dispatch">
+                      <el-option label="开启" value="test1"></el-option>
+                      <el-option label="关闭" value="test2"></el-option>
+                    </el-select>
+                    <el-tooltip class="item" placement="top">
+                      <div slot="content">
+                        自动选择空闲队列，以减少任务积压。提交任务必须使用
+                        <b><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=467671033" target="_blank">HMPClient</a></b>
+                        ，小流量阶段适用范围<b><a href="http://wiki.baidu.com/pages/viewpage.action?pageId=490079170"
+                                        target="_blank">
+                        说明</a></b>
+                      </div>
+                      <el-button type="text" icon="el-icon-question"></el-button>
+                    </el-tooltip>
+                  </el-form-item>
                 </el-col>
                 <!--UGI-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
@@ -141,16 +145,17 @@
                 </el-col>
                 <!--输出路径-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-tooltip placement="top">
-                    <div slot="content">
-                      真实全路径, 时间部分请替换: yyyyMM, yyyyMMdd, yyyyMMddHH, yyyyMMdd_HH, yyyyMMdd/HH, yyyyMMdd/HHmm<br>
-                      输出路径格式: {fs.default.name}/ user/ {UGI中的账号名}/ job_data/ production|development/ {业务线}/ {个人目录}<br>
-                      如：afs://tianqi.afs.baidu.com:9902/user/feed_video/job_data/production/haokan/robin/yyyyMMdd
-                    </div>
-                    <el-form-item label="输出路径" prop="output">
-                      <el-input v-model="jobCreateForm.output" placeholder="请输入输出路径"></el-input>
-                    </el-form-item>
-                  </el-tooltip>
+                  <el-form-item label="输出路径" prop="output">
+                    <el-input v-model="jobCreateForm.output" placeholder="请输入输出路径"></el-input>
+                    <el-tooltip class="item" placement="top">
+                      <div slot="content">
+                        真实全路径, 时间部分请替换: yyyyMM, yyyyMMdd, yyyyMMddHH, yyyyMMdd_HH, yyyyMMdd/HH, yyyyMMdd/HHmm<br>
+                        输出路径格式: {fs.default.name}/ user/ {UGI中的账号名}/ job_data/ production|development/ {业务线}/ {个人目录}<br>
+                        如：afs://tianqi.afs.baidu.com:9902/user/feed_video/job_data/production/haokan/robin/yyyyMMdd
+                      </div>
+                      <el-button type="text" icon="el-icon-question"></el-button>
+                    </el-tooltip>
+                  </el-form-item>
                 </el-col>
               </el-row>
             </div>
@@ -179,7 +184,7 @@
         </el-collapse>
         <p class="warning-message"><b>注意: </b><b
           style="color:red">请务必保证注册信息的真实性，以免影响任务正常运行。注册后在统一时间点审批，紧急任务可联系平台管理员审批！</b></p>
-        <el-row type="flex" justify="center" class="submit-buttons">
+        <el-row type="flex" justify="end" class="submit-buttons">
           <el-button type="primary" @click="submitForm('ruleForm')">创建</el-button>
           <el-button type="primary" @click="resetForm('ruleForm')">重置</el-button>
           <el-button type="primary">列表</el-button>
@@ -190,16 +195,15 @@
 </template>
 
 <script>
-  import RotatingBanner from '@/components/RotatingBanner'
-
   export default {
     name: 'JobCreate',
-    created () {
+    created() {
       // eslint-disable-next-line no-undef
       $('head').append('<style>.el-collapse-item__arrow{float:left!important}</style>')
     },
-    data () {
+    data() {
       return {
+        notMobile: document.body.clientWidth > 1024,
         activeNames: ['1', '2', '3'],
         jobCreateForm: {
           jobname: '',
@@ -271,7 +275,7 @@
       }
     },
     methods: {
-      doFollowHiPu (appid) {
+      doFollowHiPu(appid) {
         var f = document.createElement('form')
         document.body.appendChild(f)
         f.setAttribute('action', 'baidu://message')
@@ -283,7 +287,7 @@
         f.submit()
         document.body.removeChild(f)
       },
-      submitForm (formName) {
+      submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             alert('submit!')
@@ -293,12 +297,9 @@
           }
         })
       },
-      resetForm (formName) {
+      resetForm(formName) {
         this.$refs[formName].resetFields()
       }
-    },
-    components: {
-      RotatingBanner
     }
   }
 </script>
@@ -310,6 +311,7 @@
     padding: 0;
     width: 100%;
   }
+
   .divider {
     border-bottom: 1px solid rgba(7, 17, 27, 0.2);
   }
@@ -318,14 +320,8 @@
     padding: 10px
   }
 
-  .search-wrapper {
-    width: 100%;
-    padding: 10px 20px;
-    text-align: center;
-  }
-
-  .el-select, .el-input, .el-radio-group {
-    width: 100%;
+  .el-select, .el-input, .el-radio-group, .el-textarea {
+    width: calc(100% - 20px)
   }
 
   .el-icon-arrow-right {
@@ -337,11 +333,13 @@
     text-align: left;
     margin-bottom: 20px;
   }
-  .task-info, .queue-info{
+
+  .task-info, .queue-info, .other-info {
     padding: 20px;
   }
-  .switch-wrapper{
-    text-align: left!important
+
+  .switch-wrapper {
+    text-align: left !important
   }
 
   .warning-message {

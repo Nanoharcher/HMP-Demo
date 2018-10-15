@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-menu
-      default-active="/JobList"
+      :default-active="this.$route.path"
       class="sidebar-content"
       @open="handleOpen"
       @close="handleClose"

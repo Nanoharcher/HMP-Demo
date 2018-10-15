@@ -1,7 +1,6 @@
 <template>
   <div class="search-wrapper">
     <!--<div class="search-title">搜索选项</div>-->
-    <!--<div class="divider"></div>-->
     <el-form ref="form" :model="form" label-width="80px" label-position="left">
       <el-row :gutter="20">
         <!--作业名-->
@@ -100,7 +99,7 @@
 <style>
   .search-wrapper{
     width: 100%;
-    padding: 10px 20px;
+    padding: 22px 20px 0px 20px;
     text-align:center;
     background-color: #f2f2f2;
   }

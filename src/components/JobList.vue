@@ -1,6 +1,5 @@
 <template>
     <div>
-      <rotating-banner></rotating-banner>
       <div class="divider"></div>
       <el-container>
         <search></search>
@@ -14,14 +13,12 @@
 <script>
   import Search from '@/components/JobList_Search'
   import TableContent from '@/components/JobList_TableContent'
-  import RotatingBanner from '@/components/RotatingBanner'
 
   export default {
     name: 'HomePage',
     components: {
       Search,
-      TableContent,
-      RotatingBanner
+      TableContent
     }
   }
 </script>
