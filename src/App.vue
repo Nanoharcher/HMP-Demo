@@ -64,7 +64,7 @@
 <style>
   html, body{
     height: 100%;
-    font-weight: 700;
+    font-weight: 500;
   }
   #app{
     height: 100%;
@@ -88,7 +88,7 @@
     width: 100%;
   }
   .logo-wrapper{
-    background-color: rgb(84, 92, 100);
+    background-color: #409eff;
     cursor: pointer;
     padding: 0 10px;
   }
@@ -107,7 +107,7 @@
     font-weight: 700;
   }
   .login-wrapper{
-    background-color: rgb(84, 92, 100);
+    background-color: #409eff;
     cursor: pointer;
     padding: 0 20px 0 20px;
   }
@@ -135,7 +135,7 @@
     box-sizing: border-box;
     width: 200px!important;
     border:none!important;
-    background-color: #853998;
+    background-color: #545c64;
   }
   @media screen and (max-width: 1024px) {
     .el-header{

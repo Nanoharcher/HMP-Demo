@@ -5,7 +5,7 @@
       class="sidebar-content"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#853998"
+      background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
       :collapse="isCollapse"
@@ -85,7 +85,7 @@
 
 <style scoped>
   .sidebar-content{
-    background-color: #853998
+    background-color: #545c64
   }
   .sidebar-content:not(.el-menu--collapse){
     width: 200px;

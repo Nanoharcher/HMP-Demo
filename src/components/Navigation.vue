@@ -1,7 +1,7 @@
 <template>
   <div class="navigation-wrapper">
     <el-menu class="navigation-content" mode="horizontal"
-             background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" :router="true">
+             background-color="#409eff" text-color="#fff" active-text-color="#ffd04b" :router="true">
       <el-menu-item index="1">资源统计</el-menu-item>
       <el-menu-item index="2">作业统计</el-menu-item>
       <el-menu-item index="3">Hadoop</el-menu-item>
@@ -21,7 +21,7 @@
 
 <style scoped>
   .navigation-wrapper {
-    background-color: rgb(84, 92, 100);
+    background-color: #409eff;
     width: 100%;
   }
   .navigation-content{
