@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-menu
-      default-active="1-1"
+      default-active="/JobList"
       class="sidebar-content"
       @open="handleOpen"
       @close="handleClose"
@@ -9,14 +9,15 @@
       text-color="#fff"
       active-text-color="#ffd04b"
       :collapse="isCollapse"
+      :router="true"
       >
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-document"></i>
           <span>Job管理</span>
         </template>
-        <el-menu-item index="1-1">Job注册列表</el-menu-item>
-        <el-menu-item index="1-2">Job注册</el-menu-item>
+        <el-menu-item index="/JobList">Job注册列表</el-menu-item>
+        <el-menu-item index="/JobCreate">Job注册</el-menu-item>
         <el-menu-item index="1-3">Job上线</el-menu-item>
         <el-menu-item index="1-4">Job管控记录</el-menu-item>
         <el-menu-item index="1-5">运行中任务管理</el-menu-item>
