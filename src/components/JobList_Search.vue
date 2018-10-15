@@ -109,7 +109,7 @@
     font-weight:700;
   }
   .el-select .el-input {
-    width: 100px;
+    width: 100%;
   }
   .single-selector{
     width: 100%;
