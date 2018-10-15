@@ -3,7 +3,7 @@
     <rotating-banner></rotating-banner>
     <div class="divider"></div>
     <div class="form-wrapper">
-      <el-form :model="jobCreateForm" :rules="rules" ref="ruleForm" label-width="125px" class="search-wrapper">
+      <el-form :model="jobCreateForm" :rules="rules" ref="ruleForm" label-width="110px" class="search-wrapper">
         <el-collapse v-model="activeNames">
           <el-collapse-item name="1">
             <template slot="title">
@@ -129,8 +129,8 @@
                 </el-col>
                 <!--Reduce并发-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-form-item label="ReduceCapacity" prop="reduceCapacity">
-                    <el-input v-model="jobCreateForm.reduceCapacity" placeholder="请输入ReduceCapacity"></el-input>
+                  <el-form-item label="Reduce并发" prop="reduceCapacity">
+                    <el-input v-model="jobCreateForm.reduceCapacity" placeholder="请输入Reduce并发"></el-input>
                   </el-form-item>
                 </el-col>
                 <!--有输出路径-->
