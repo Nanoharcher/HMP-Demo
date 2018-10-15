@@ -168,15 +168,16 @@
               <el-row :gutter="20" class="search-rows">
                 <!--临时任务期限-->
                 <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" class="search-item">
-                  <el-tooltip placement="top">
-                    <div slot="content">0-30天, 0:非临时任务</div>
-                    <el-form-item label="临时任务期限" prop="validDay">
-                      <el-input v-model="jobCreateForm.validDay" placeholder="请输入天数"
-                                :disabled="!jobCreateForm.hasvalidDay">
-                        <el-switch v-model="jobCreateForm.hasvalidDay" slot="prepend"></el-switch>
-                      </el-input>
-                    </el-form-item>
-                  </el-tooltip>
+                  <el-form-item label="临时任务期限" prop="validDay">
+                    <el-input v-model="jobCreateForm.validDay" placeholder="请输入天数"
+                              :disabled="!jobCreateForm.hasvalidDay">
+                      <el-switch v-model="jobCreateForm.hasvalidDay" slot="prepend"></el-switch>
+                    </el-input>
+                    <el-tooltip class="item" placement="top">
+                      <div slot="content">0-30天, 0:非临时任务</div>
+                      <el-button type="text" icon="el-icon-question"></el-button>
+                    </el-tooltip>
+                  </el-form-item>
                 </el-col>
               </el-row>
             </div>
@@ -185,9 +186,8 @@
         <p class="warning-message"><b>注意: </b><b
           style="color:red">请务必保证注册信息的真实性，以免影响任务正常运行。注册后在统一时间点审批，紧急任务可联系平台管理员审批！</b></p>
         <el-row type="flex" justify="end" class="submit-buttons">
-          <el-button type="primary" @click="submitForm('ruleForm')">创建</el-button>
-          <el-button type="primary" @click="resetForm('ruleForm')">重置</el-button>
-          <el-button type="primary">列表</el-button>
+          <el-button type="primary">提交</el-button>
+          <el-button type="default">返回</el-button>
         </el-row>
       </el-form>
     </div>
